@@ -27,7 +27,6 @@ sub report_result {
 	$TEST_NUM++;
 }
 
-
 my $dir = "data";
 
 

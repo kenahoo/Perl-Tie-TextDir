@@ -1,5 +1,20 @@
 Revision history for Perl extension Tie::TextDir.
 
+0.04
+
+   - Now accepts the opening-mode as 'rw', 'ro', or a bitmask like
+     O_CREAT|O_RDWR.  This improves compatibility with things like MLDBM
+     and MLDBM::Sync. (Thanks to Joshua Chamas)
+   
+   - Uses File::Spec to construct file paths, so it should now work on
+     other OSs like Windows, Mac
+   
+   - delete($hash{key}) will now return the deleted value, like it should.
+   
+   - General code cleanup - the old code style was rather embarassing
+
+   - Lots of documentation updates
+
 0.03  
    - No changes - just added a copyright notice, which should have been
      present before, but I overlooked it.
