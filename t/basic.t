@@ -18,7 +18,7 @@ my $dir = "data";
   
   # 3: store a value
   $hash{'key'} = $val;
-  ok $hash{'key'}, $val, "value is '$hash{'key'}";
+  ok $hash{'key'}, $val;
   
   untie %hash;
   
@@ -26,7 +26,7 @@ my $dir = "data";
   ok tie(%hash, 'Tie::TextDir', $dir);
   
   # 5: check the stored value
-  ok $hash{'key'}, $val, "value is '$hash{'key'}'";
+  ok $hash{'key'}, $val;
   
   local $^W;  # Don't generate superfluous warnings here
   
