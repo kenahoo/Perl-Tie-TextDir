@@ -1,5 +1,10 @@
 Revision history for Perl extension Tie::TextDir.
 
+0.05  Wed Jul  9 16:35:11 CDT 2003
+
+ - Added a Build.PL script for installing via Module::Build if the
+   user wishes to.
+
 0.04  Wed Oct 17 12:49:21 CDT 2001
    - Now accepts the opening-mode as 'rw', 'ro', or a bitmask like
      O_CREAT|O_RDWR.  This improves compatibility with things like MLDBM
