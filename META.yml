@@ -1,0 +1,14 @@
+--- #YAML:1.0
+name: Tie-TextDir
+version: 0.05
+license: unknown
+distribution_type: module
+requires: {}
+recommends: {}
+build_requires: {}
+conflicts: {}
+provides:
+  Tie::TextDir:
+    file: TextDir.pm
+    version: 0.05
+generated_by: Module::Build version 0.18_04
