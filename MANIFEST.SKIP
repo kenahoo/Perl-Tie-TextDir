@@ -1,0 +1,7 @@
+^Build$
+^Makefile$
+\.SKIP$
+\.bak$
+^_build
+CVS
+^Tie-TextDir
