@@ -1,5 +1,15 @@
 Revision history for Perl extension Tie::TextDir.
 
+0.06
+
+ - Improved speed considerably by using Perl's open() instead of the
+   FileHandle module, and sysread() instead of <FH>. [patch by Perrin
+   Harkins]
+
+ - Data is now written to a temporary file and then we rename() to the
+   destination file, making the actual write an atomic operation.
+   [patch by Perrin Harkins]
+
 0.05  Wed Jul  9 16:35:11 CDT 2003
 
  - Added a Build.PL script for installing via Module::Build if the
