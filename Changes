@@ -6,9 +6,12 @@ Revision history for Perl extension Tie::TextDir.
    FileHandle module, and sysread() instead of <FH>. [patch by Perrin
    Harkins]
 
- - Data is now written to a temporary file and then we rename() to the
-   destination file, making the actual write an atomic operation.
-   [patch by Perrin Harkins]
+ - Data is now written to a temporary file using File::Temp, and then
+   we rename() to the destination file, making the actual write an
+   atomic operation.  [patch by Perrin Harkins]
+
+ - When creating filehandles, we now use Symbol.pm if perl's version
+   is less than 5.6, and just auto-vivify them otherwise.
 
 0.05  Wed Jul  9 16:35:11 CDT 2003
 
