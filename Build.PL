@@ -6,5 +6,6 @@ my $build = Module::Build->new
     pm_files => { 'TextDir.pm' => 'lib/Tie/TextDir.pm' },
     cleanup_files => ['data'],
     license => 'perl',
+    sign => 1,
   );
 $build->create_build_script;
