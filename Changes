@@ -1,0 +1,14 @@
+Revision history for Perl extension Tie::TextDir.
+
+0.03  
+   - No changes - just added a copyright notice, which should have been
+     present before, but I overlooked it.
+
+0.02  Tue Aug 11 16:10:32 EDT 1998
+   - fixed bug in EXISTS method that reported that the keys
+     '', '.', and '..' existed in a hash when that was not
+     the case.
+
+0.01  Sun Jun 28 18:34:36 1998
+   - original version; created by h2xs 1.18
+
