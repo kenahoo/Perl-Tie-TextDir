@@ -2,9 +2,11 @@ package Tie::TextDir;
 
 use strict;
 use File::Spec;
+use File::Temp;
 use Symbol;
 use Fcntl qw(:DEFAULT);
 use Carp;
+use constant HAVE_56 => $] >= 5.006;
 use vars qw($VERSION);
 
 $VERSION = '0.06';
@@ -38,7 +40,7 @@ sub TIEHASH {
   $self->{PATH} = $path;
   
   # Get a filehandle and open the directory:
-  $self->{HANDLE} = gensym();
+  $self->{HANDLE} = HAVE_56 ? undef : gensym();
   opendir($self->{HANDLE}, $path) or croak("can't opendir $path: $!");		
   
   return $self;
@@ -76,14 +78,11 @@ sub STORE {
     return;
   }
 
-  # use temp file for writing, and then rename to make the update atomic
-  my $tmp = "$file.tmp$$";
-
-  local *FH;
-  open( FH, "> $tmp" ) or croak ("can't open temporary file $tmp: $!");
-  print FH $_[0];
-  close FH;
-  rename ($tmp, $file) or croak ("can't rename temp file $tmp to $file: $!");
+  # Use temp file for writing, and then rename to make the update atomic
+  my ($fh, $tmpname) = File::Temp::tempfile(DIR => $self->{PATH}, CLEANUP => 1);
+  print $fh $_[0];
+  close $fh;
+  rename ($tmpname, $file) or croak ("can't rename temp file $tmpname to $file: $!");
 }
 
 
