@@ -6,4 +6,5 @@ WriteMakefile(
     'VERSION_FROM' => 'TextDir.pm', # finds $VERSION
     'dist' => { COMPRESS=>"gzip", SUFFIX=>"gz" },
     'clean' => {FILES => 'data'},
+    'PL_FILES' => {},
 );
