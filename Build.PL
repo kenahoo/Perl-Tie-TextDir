@@ -6,6 +6,7 @@ my $build = Module::Build->new
     license => 'perl',
     requires => {
 		 'File::Spec' => 0,
+		 'File::Temp' => 0,
 		 'Symbol'     => 0,
 		 'Fcntl'      => 0,
 		 'Carp'       => 0,
