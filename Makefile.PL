@@ -9,6 +9,7 @@ WriteMakefile
    INSTALLDIRS => 'site',
    PREREQ_PM   => {
 		 'File::Spec' => '0',
+		 'File::Temp' => '0',
 		 'Test' => '0',
 		 'Symbol' => '0',
 		 'Carp' => '0',
