@@ -7,7 +7,7 @@ use Fcntl qw(:DEFAULT);
 use Carp;
 use vars qw($VERSION);
 
-$VERSION = '0.05';
+$VERSION = '0.06';
 
 sub TIEHASH {
   croak "usage: tie(%hash, 'Tie::TextDir', \$path, [mode], [perms])"
