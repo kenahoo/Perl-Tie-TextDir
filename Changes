@@ -1,7 +1,6 @@
 Revision history for Perl extension Tie::TextDir.
 
-0.04
-
+0.04  Wed Oct 17 12:49:21 CDT 2001
    - Now accepts the opening-mode as 'rw', 'ro', or a bitmask like
      O_CREAT|O_RDWR.  This improves compatibility with things like MLDBM
      and MLDBM::Sync. (Thanks to Joshua Chamas)
@@ -15,7 +14,7 @@ Revision history for Perl extension Tie::TextDir.
 
    - Lots of documentation updates
 
-0.03  
+0.03  21-Oct-1998 08:44
    - No changes - just added a copyright notice, which should have been
      present before, but I overlooked it.
 
