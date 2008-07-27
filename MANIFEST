@@ -6,3 +6,4 @@ Makefile.PL
 README
 TextDir.pm
 t/basic.t
+t/hierarchic.t

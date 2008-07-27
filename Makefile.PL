@@ -8,8 +8,10 @@ WriteMakefile
    PL_FILES    => {},
    INSTALLDIRS => 'site',
    PREREQ_PM   => {
+		 'File::Path' => '0',
 		 'File::Spec' => '0',
 		 'File::Temp' => '0',
+		 'File::Find::Iterator' => '0.4',
 		 'Test' => '0',
 		 'Symbol' => '0',
 		 'Carp' => '0',
