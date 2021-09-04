@@ -1,5 +1,5 @@
 use strict;
-use Test;
+use Test::More;
 use Tie::TextDir;
 use File::Spec;
 use File::Path;
@@ -29,28 +29,28 @@ rmtree($dir);
   ok tie(%hash, 'Tie::TextDir', $dir, undef, undef, 1);
   
   # 5: check the stored value
-  ok $hash{'key'}, $val;
+  is $hash{'key'}, $val;
   
   local $^W;  # Don't generate superfluous warnings here
   
   # 6: check whether the empty key exists()
-  ok exists $hash{''}, '';
+  is exists $hash{''}, '';
   
   # 7: check whether the . key exists()
-  ok exists $hash{'.'}, '';
+  is exists $hash{'.'}, '';
   
   # 8: check whether the .. key exists()
-  ok exists $hash{'..'}, '';
+  is exists $hash{'..'}, '';
   
   untie %hash;
   
   # Clean up
   ok tie(%hash, 'Tie::TextDir', $dir, 'rw', undef, 1);
   delete $hash{$_} foreach keys %hash;
-  ok keys %hash, 0;
+  is keys %hash, 0;
   
   rmdir $dir;
-  ok -e $dir, undef;
+  is -e $dir, undef;
 }
 
 # Make sure our test environment is sane
@@ -68,7 +68,7 @@ rmtree($dir);
   }
 
   for (qw!cow frog!) {
-    ok $hash{$_}, $val;	
+    is $hash{$_}, $val;
   }
 
   # 15, 16 store two smaller keys
@@ -77,7 +77,7 @@ rmtree($dir);
   }
 	
   for (qw!f oo!) {
-    ok $hash{$_}, $val;	
+    is $hash{$_}, $val;
   }
 
   untie %hash;
@@ -85,9 +85,8 @@ rmtree($dir);
   # 17..19: Cleanup
   ok tie(%hash, 'Tie::TextDir', $dir, 'rw', undef, 2);
   delete $hash{$_} foreach keys %hash;
-  ok keys %hash, 0;
+  is keys %hash, 0;
   
   rmdir $dir;
-  ok -e $dir, undef;
+  is -e $dir, undef;
 }
-
