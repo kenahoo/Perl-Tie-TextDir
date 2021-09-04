@@ -1,6 +1,8 @@
 package Tie::TextDir;
 
 use strict;
+use warnings;
+
 use File::Spec;
 use File::Temp;
 use File::Path;
