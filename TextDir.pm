@@ -11,9 +11,8 @@ use Symbol;
 use Fcntl qw(:DEFAULT);
 use Carp;
 use constant HAVE_56 => $] >= 5.006;
-use vars qw($VERSION);
 
-$VERSION = '0.07';
+our $VERSION = '0.07';
 
 sub TIEHASH {
   croak "usage: tie(%hash, 'Tie::TextDir', \$path, [mode], [perms], [levels])"
