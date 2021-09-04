@@ -10,7 +10,6 @@ use File::Basename;
 use Symbol;
 use Fcntl qw(:DEFAULT);
 use Carp;
-use constant HAVE_56 => $] >= 5.006;
 
 our $VERSION = '0.07';
 
