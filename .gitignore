@@ -32,4 +32,12 @@ README
 Build
 data
 _build
-Tie-Textdir*
+Tie-Textdir*META.json
+META.yml
+Makefile.PL
+MYMETA.json
+MYMETA.yml
+META.json
+Tie-TextDir*
+.idea
+blib
