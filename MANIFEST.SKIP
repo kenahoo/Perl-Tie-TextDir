@@ -6,3 +6,6 @@
 CVS
 ^Tie-TextDir
 ^\.
+^MYMETA\.yml$
+^MYMETA\.json$
+^blib
