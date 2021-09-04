@@ -7,3 +7,4 @@ README
 TextDir.pm
 t/basic.t
 t/hierarchic.t
+META.json

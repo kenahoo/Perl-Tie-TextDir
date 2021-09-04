@@ -17,7 +17,7 @@ my $build = Module::Build->new
     build_requires => {
 		       'Test' => 0,
 		      },
-    
+	configure_requires => { 'Module::Build' => 0 },
     pm_files => { 'TextDir.pm' => 'lib/Tie/TextDir.pm' },
     cleanup_files => ['data'],
     create_makefile_pl => 'traditional',
